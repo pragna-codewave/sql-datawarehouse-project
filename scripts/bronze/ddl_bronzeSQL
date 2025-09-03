@@ -1,12 +1,17 @@
 /******************************************************************************************
 Description :
-   - This procedure truncates Bronze Layer tables before inserting new data 
+   - This stored procedure truncates Bronze Layer tables before inserting new data 
      (avoids duplication).
    - Loads CSV source files (CRM & ERP) into corresponding bronze tables using BULK INSERT.
    - Logs start time, end time, and load duration for each table.
    - Prints overall load time for the entire Bronze Layer process.
    - Implements TRY...CATCH for error handling and displays error messages if failures occur.
    ******************************************************************************************/
+/
+USE CASE
+EXEC bronze.load_bronze
+ ******************************************************************************************/
+
 
 
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
@@ -128,4 +133,4 @@ END CATCH
 
 END
 
-EXEC bronze.load_bronze
+
